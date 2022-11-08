@@ -16,3 +16,16 @@ Player.prototype.turnScore = function(roll) {
     this.currentScore += roll;
   }
 }
+
+Player.prototype.totalScore = function() {
+  this.score += this.currentScore;
+  this.currentScore = 0;
+}
+
+Player.prototype.checkScore = function() {
+  if (this.score >= 100) {
+    return true;
+  } else {
+    return false;
+  }
+}

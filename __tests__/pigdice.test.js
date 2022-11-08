@@ -29,6 +29,23 @@ describe("Player", () => {
     player1.turnScore(5);
     expect(player1.currentScore).toEqual(5);
   });
+
+  test('Should add current score to score.', () => {
+    let player1 = new Player(0, true, 12);
+    player1.totalScore();
+    expect(player1.score).toEqual(12);
+    expect(player1.currentScore).toEqual(0);
+  });
+
+  test('Should check to see if score is winning.', () => {
+    let player1 = new Player(50, true, 0);
+    expect(player1.checkScore()).toEqual(false);
+  });
+
+  test('Should check to see if score is winning.', () => {
+    let player1 = new Player(106, true, 0);
+    expect(player1.checkScore()).toEqual(true);
+  });
 });
 
 
